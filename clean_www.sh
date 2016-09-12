@@ -25,3 +25,10 @@ echo "\n\n"
 echo "Current files are: "
 ls -l $DEST
 
+# restart apache server
+echo "Restarting web server: "
+service apache2 stop
+service apache2 start
+
+echo"\n\nDone!!"
+
