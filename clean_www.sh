@@ -1,7 +1,18 @@
 #!/bin/sh
+# author: Darci K 
+# darcikhey27@gmail.com
+# darcikhey.com
+#
+# host your own web server at your place and use git 
+# to keep files updated
+#
+# use sudo when executing script
+# 
 
-SOURCE="/home/dk/Documents/GitHub/ruby_scripts" # the location of my repo
-DEST="/home/dk/ruby/test_dest" #destination for webserver files
+# the location of your git repo where you keep your webfiles ex..index.html, CSS, JavaScript
+SOURCE="/home/darci/Github/web-project/" 
+
+DEST="/var/www/html/"  # destination dir for web server, I'm using apache
 
 cd $SOURCE
 
@@ -19,9 +30,10 @@ echo "\n\n"
 
 echo "Updating files now: "
 echo "Removing old files"
-#rm -rf $DEST*
+rm -rf $DEST*
+
 echo "\n\n copying new files"
-#cp -R $SOURCE $DEST
+cp -R * $DEST
 
 echo "----------------------------\n"
 echo "Done updating files"
@@ -33,7 +45,11 @@ echo "\n"
 # restart apache server
 echo "Restarting web server: \n"
 service apache2 stop
+
+echo "\n\n"
 service apache2 start
 
 echo "\n\nDone!!"
-
+echo "webserver files are up to date with repo at: \n"
+echo $SOURCE
+echo "\n"
