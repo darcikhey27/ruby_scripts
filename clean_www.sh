@@ -5,6 +5,8 @@ DEST="/home/dk/ruby/test_dest" #destination for webserver files
 
 cd $SOURCE
 
+clear
+
 echo "updating repo: executing \ngit pull "
 git pull
 
@@ -24,13 +26,14 @@ echo "\n\n copying new files"
 echo "----------------------------\n"
 echo "Done updating files"
 echo "\n\n"
-echo "Current files are: "
+echo "Current files in $DEST are: "
 ls -l $DEST
+echo "\n"
 
 # restart apache server
-echo "Restarting web server: "
+echo "Restarting web server: \n"
 service apache2 stop
 service apache2 start
 
-echo"\n\nDone!!"
+echo "\n\nDone!!"
 
