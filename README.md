@@ -1,5 +1,6 @@
 
-<<html>
+<!DOCTYPE html>
+<html>
 <head>
 	<style>
 	body{
